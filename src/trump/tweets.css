@@ -1,0 +1,29 @@
+.tweets{
+  position: absolute;
+  top: 10px;
+  left: 60vw;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  align-content: space-around;
+  width: 250px;
+}
+
+.tweet{
+  flex: 1;
+  margin: 10px;
+  padding: 10px;
+  color:#333;
+  background-color: rgba(255,255,255,0.7);
+  border: 1px solid rgb(178, 34, 52);
+  border-radius: 30px 30px;
+  align-self: stretch;
+  /*transform: scale(0.5);
+  animation: appear 3s;*/
+}
+
+@keyframes appear {
+  50% {
+     transform: scale(1);
+  }
+}
