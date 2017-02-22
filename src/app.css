@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 body{
   font-family: 'Roboto', sans-serif;
+  margin:0;
 }
 .app {
   display: flex;
@@ -23,16 +24,15 @@ body{
   cursor: pointer;
 }
 
-#trump-head{
+.trump-head,.trump-mouth{
   display: block;
   position: absolute;
-  top: 180px;
+  top: 660px;
   width:800px;
+  transition: top 2s ease;
 }
 
-#trump-mouth{
-  position: absolute;
-  width: 800px;
+.bigscreen{
   top: 180px;
 }
 
@@ -45,4 +45,27 @@ body{
   50% {
      transform: translate(0, 40px);
   }
+}
+
+@media (max-width: 414px){
+  .app{
+    margin-top: 50px;
+  }
+  .soviet-stars-flag, .usa-ussr-flag{
+    margin: 5px 0 5px 0;
+    width: 100vw;
+    height: 225px;
+  }
+  .trump-head, .trump-mouth{
+    width: 250px;
+    top: 330px;
+  }
+  .bigscreen{
+    top: 130px;
+  }
+ @keyframes move {
+  50% {
+     transform: translate(0, 10px);
+  }
+} 
 }

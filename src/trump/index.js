@@ -13,8 +13,8 @@ function TrumpHead(props){
   }
   return (
     <div id="trump" onClick={moveMouth}>
-      <img id="trump-head" src="images/trump-head-moving.png" alt="trump head"/>
-      <img id="trump-mouth" src="images/trump-mouth.png" alt="trump mouth"/>
+      <img id="trump-head" className="trump-head" src="images/trump-head-moving.png" alt="trump head"/>
+      <img id="trump-mouth" className="trump-mouth" src="images/trump-mouth.png" alt="trump mouth"/>
     </div>
   )
 }
@@ -22,6 +22,14 @@ function TrumpHead(props){
 class Main extends Component {
   loadTweets(){
     this.props.fetchTweets();
+  }
+  componentDidMount(){
+    setTimeout(()=>{
+      let m = document.getElementById('trump-mouth');
+      let h = document.getElementById('trump-head');
+      m.classList.add('bigscreen');
+      h.classList.add('bigscreen');
+    },600);
   }
   render() {
     let {error, tweets} = this.props;
@@ -31,7 +39,7 @@ class Main extends Component {
         m.classList.remove('move-mouth');
         void m.offsetWidth;
         m.classList.add('move-mouth');
-      },600);
+      },400);
     }
     return (
       <div className="app">
