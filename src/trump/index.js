@@ -24,12 +24,13 @@ class Main extends Component {
     this.props.fetchTweets();
   }
   componentDidMount(){
+    let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     setTimeout(()=>{
       let m = document.getElementById('trump-mouth');
       let h = document.getElementById('trump-head');
       m.classList.add('bigscreen');
       h.classList.add('bigscreen');
-    },600);
+    },isMobile ? 100 : 500);
   }
   render() {
     let {error, tweets} = this.props;
