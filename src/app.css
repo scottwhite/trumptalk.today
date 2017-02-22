@@ -38,6 +38,7 @@ body{
 
 .move-mouth{
   animation: move 0.5s;
+  animation-iteration-count: 10;
 }
 
 @keyframes move {

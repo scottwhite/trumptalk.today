@@ -7,10 +7,6 @@ import Tweets from './tweets';
 
 function TrumpHead(props){
   function moveMouth(){
-    let m = document.getElementById('trump-mouth');
-    m.classList.remove('move-mouth');
-    void m.offsetWidth;
-    m.classList.add('move-mouth');
     if(props.onClick){
       props.onClick();
     }
@@ -29,6 +25,14 @@ class Main extends Component {
   }
   render() {
     let {error, tweets} = this.props;
+    if(this.props.tweets.length > 0){
+      setTimeout(()=>{
+        let m = document.getElementById('trump-mouth');
+        m.classList.remove('move-mouth');
+        void m.offsetWidth;
+        m.classList.add('move-mouth');
+      },600);
+    }
     return (
       <div className="app">
         <div className="top-part">
@@ -45,7 +49,7 @@ class Main extends Component {
             <path d="M218.412,218.854 C279.215,275.26 377.745,173.55 251.825,99.841 C345.532,203.951 255.57,235.867 222.996,203.75 L221.356,202.395 C220.026,203.888 218.693,205.379 217.365,206.873 C214.841,204.491 210.921,203.791 209.715,207.864 C204.755,207.521 201.845,210.269 200.548,215.417 C191.324,221.527 181.338,226.889 175.599,236.485 C172.319,246.635 178.807,251.049 186.146,250.209 C198.177,245.211 201.896,234.408 208.334,225.495 C212.886,224.046 216.741,222.098 217.448,217.955" fill="#FFFFFF"/>
           </g>
         </svg>
-        <TrumpHead onClick={this.loadTweets.bind(this)}/>
+        <TrumpHead onClick={this.loadTweets.bind(this)} times={tweets.length}/>
         </div>
 
           <svg className="soviet-stars-flag" x="0" y="0" width="1235" height="650" viewBox="0, 0, 1235, 650">

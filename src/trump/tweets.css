@@ -18,12 +18,17 @@
   border: 1px solid rgb(178, 34, 52);
   border-radius: 30px 30px;
   align-self: stretch;
-  /*transform: scale(0.5);
-  animation: appear 3s;*/
+  width: 250px;
+  opacity: 0;
+  animation: fadeIn 1;
+  animation-fill-mode: forwards;
 }
 
-@keyframes appear {
-  50% {
-     transform: scale(1);
+@keyframes fadeIn {
+  0% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1.0;
   }
 }
