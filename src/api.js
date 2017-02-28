@@ -1,4 +1,5 @@
-import uuid from 'node-uuid'
+import uuid from 'node-uuid';
+import config from './config';
 
 function Api(){
   let running = {}
@@ -142,7 +143,7 @@ function Api(){
   }
 
   function tweets(search){
-    let url = 'https://90sx3u0gf6.execute-api.us-east-1.amazonaws.com/prod/trumpTweets';
+    let url = config.trump_api;
     return send_request(url).then(res => res).catch(err => { throw(err) })
   }
 
